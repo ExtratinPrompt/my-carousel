@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valorant Interactive Carousel</title>
+    <!-- Link sa hiwalay na CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container ng buong carousel -->
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <!-- Track na naglalaman ng lahat ng slides -->
+            <div class="carousel-track" id="carouselTrack">
+                <!-- bawat .carousel-slide ay isang slide -->
+                <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">JETT</h2>
+                        <p class="slide-subtitle">Duelist Agent</p>
+                        <p class="slide-description">Representing her home country of South Korea, Jett's agile and evasive fighting style lets her take risks no one else can.</p>
+                    </div>
+                </div>
+                <!-- Pareho lang ang structure sa ibang slides -->
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">PHOENIX</h2>
+                        <p class="slide-subtitle">Duelist Agent</p>
+                        <p class="slide-description">Hailing from the U.K., Phoenix's star power shines through in his fighting style, igniting the battlefield with flash and flare.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">SAGE</h2>
+                        <p class="slide-subtitle">Sentinel Agent</p>
+                        <p class="slide-description">The stronghold of China, Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">HAVEN</h2>
+                        <p class="slide-subtitle">Tactical Map</p>
+                        <p class="slide-description">A monastery in Bhutan. Haven has three sites to attack and defend which makes for some unique strategies and rotations.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">BIND</h2>
+                        <p class="slide-subtitle">Tactical Map</p>
+                        <p class="slide-description">Two sites. No middle. Gotta pick left or right. What's it going to be then? Both offer direct paths for attackers.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">VANDAL</h2>
+                        <p class="slide-subtitle">Assault Rifle</p>
+                        <p class="slide-description">Versatile automatic weapon. High damage output with manageable recoil makes it a favorite among agents.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">PHANTOM</h2>
+                        <p class="slide-subtitle">Assault Rifle</p>
+                        <p class="slide-description">Silenced automatic weapon with superior accuracy and manageable recoil. Perfect for stealthy eliminations.</p>
+                    </div>
+                </div>
+                <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://i.ytimg.com/vi/4Z45qWWwhOc/maxresdefault.jpg')">
+                    <div class="slide-content">
+                        <h2 class="slide-title">REYNA</h2>
+                        <p class="slide-subtitle">Duelist Agent</p>
+                        <p class="slide-description">Forged in the heart of Mexico, Reyna dominates single combat, popping off with each kill she scores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons para sa navigation (previous & next) -->
+        <button class="nav-button prev" id="prevBtn">‹</button>
+        <button class="nav-button next" id="nextBtn">›</button>
+
+        <!-- Dots indicator (para alam anong slide ka) -->
+        <div class="carousel-dots" id="dotsContainer"></div>
+
+        <!-- Control buttons: Play/Pause, Shuffle, Help -->
+        <div class="carousel-controls">
+            <button class="control-button active" id="playPauseBtn">⏸️ Pause</button>
+            <button class="control-button" id="shuffleBtn">🔀 Shuffle</button>
+            <button class="control-button" id="helpBtn">❓ Help</button>
+        </div>
+
+        <!-- Progress bar sa ilalim -->
+        <div class="progress-bar" id="progressBar"></div>
+
+        <!-- Keyboard shortcuts info -->
+        <div class="shortcuts-info" id="shortcutsInfo">
+            <strong>Keyboard Shortcuts:</strong><br>
+            ← → Arrow keys: Navigate<br>
+            Space: Play/Pause<br>
+            S: Shuffle<br>
+            H: Toggle help<br>
+            1-8: Jump to slide
+        </div>
+    </div>
+
+    <!-- Hiwa-hiwalay na JS file -->
+    <script src="script.js"></script>
+</body>
+</html>
